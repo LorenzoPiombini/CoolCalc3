@@ -1,24 +1,453 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoolCalc3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jvU-iL-yuV">
+                                <rect key="frame" x="0.0" y="298" width="380" height="483.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M1n-OA-Nzl">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="95"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-bT-Cre" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="0aX-mv-fkS"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="DcZ-xc-csP"/>
+                                                    <constraint firstAttribute="width" secondItem="cPT-bT-Cre" secondAttribute="height" multiplier="1:1" id="bW3-Rw-UAc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="C"/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="0aX-mv-fkS"/>
+                                                        <exclude reference="DcZ-xc-csP"/>
+                                                        <exclude reference="bW3-Rw-UAc"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="0aX-mv-fkS"/>
+                                                        <exclude reference="DcZ-xc-csP"/>
+                                                        <exclude reference="bW3-Rw-UAc"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="clearbtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13P-Bn-fdE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzs-I3-n6g" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="+/-"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-nX-Rdr" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="%"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-5v-KgH" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="285" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="/"/>
+                                                <connections>
+                                                    <action selector="givingOperatorsDiv:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iev-zj-Ica"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-hp-5Tx">
+                                        <rect key="frame" x="0.0" y="97" width="380" height="95"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyF-PU-3Bs" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Pdt-VR-gDt"/>
+                                                    <constraint firstAttribute="width" secondItem="cyF-PU-3Bs" secondAttribute="height" multiplier="1:1" id="Wl4-kd-SMH"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="pBD-aA-kdS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="7"/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Pdt-VR-gDt"/>
+                                                        <exclude reference="Wl4-kd-SMH"/>
+                                                        <exclude reference="pBD-aA-kdS"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Pdt-VR-gDt"/>
+                                                        <exclude reference="Wl4-kd-SMH"/>
+                                                        <exclude reference="pBD-aA-kdS"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="givingValueSeven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hks-u2-m94"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox8-a5-tbu" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="8"/>
+                                                <connections>
+                                                    <action selector="givingValueEight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lT8-Cy-OeU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-mj-Xud" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="9"/>
+                                                <connections>
+                                                    <action selector="givingValueNine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZfS-QK-D5E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPw-dW-4R5" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="285" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="X"/>
+                                                <connections>
+                                                    <action selector="givingOperatorsMult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jjB-lT-8Qc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Q5-vD-bDx">
+                                        <rect key="frame" x="0.0" y="194" width="380" height="95"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPL-do-fGN" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="2cw-TZ-qGN"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="cMf-qa-acA"/>
+                                                    <constraint firstAttribute="width" secondItem="xPL-do-fGN" secondAttribute="height" multiplier="1:1" id="fiA-u5-eMt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="4"/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="2cw-TZ-qGN"/>
+                                                        <exclude reference="cMf-qa-acA"/>
+                                                        <exclude reference="fiA-u5-eMt"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="2cw-TZ-qGN"/>
+                                                        <exclude reference="cMf-qa-acA"/>
+                                                        <exclude reference="fiA-u5-eMt"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="givingValueFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ev1-Xg-Qf7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXe-vr-4Vb" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="givingValueFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAu-VD-e48"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjF-b6-m1X" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="6"/>
+                                                <connections>
+                                                    <action selector="givingValueSiz:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cmZ-tq-gaY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef9-pW-eSV" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="285" y="0.0" width="95" height="95"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="givingOperatorsAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qxv-7R-xFd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7gN-f0-Tdd">
+                                        <rect key="frame" x="0.0" y="291" width="380" height="95.666666666666686"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4F-xQ-ziy" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="95.666666666666671" height="95.666666666666671"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="0pi-GI-Owe"/>
+                                                    <constraint firstAttribute="width" secondItem="T4F-xQ-ziy" secondAttribute="height" multiplier="1:1" id="ZEP-nd-FuM"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="ue2-aF-Ugr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="1"/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="0pi-GI-Owe"/>
+                                                        <exclude reference="ZEP-nd-FuM"/>
+                                                        <exclude reference="ue2-aF-Ugr"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="0pi-GI-Owe"/>
+                                                        <exclude reference="ZEP-nd-FuM"/>
+                                                        <exclude reference="ue2-aF-Ugr"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="givingValueOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wx0-JX-U8W"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40k-Nl-pON" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="94.666666666666686" y="0.0" width="96" height="95.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="givingValueTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jde-fm-si0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HQ-u8-3NA" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="189.66666666666666" y="0.0" width="95.666666666666657" height="95.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="givingValueThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZLh-a3-eti"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6K-qd-rYU" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="284.33333333333331" y="0.0" width="95.666666666666686" height="95.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="givingOperatorSub:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WBC-af-XSi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-ak-bne">
+                                        <rect key="frame" x="0.0" y="388.66666666666663" width="380" height="95"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIA-al-fi5" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="95"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="95" id="nWM-Ah-yiV"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="188" id="zBx-u4-fyO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="0"/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="nWM-Ah-yiV"/>
+                                                        <exclude reference="zBx-u4-fyO"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="nWM-Ah-yiV"/>
+                                                        <exclude reference="zBx-u4-fyO"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="givingValueZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VfQ-k5-4Ts"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tct-uO-E8f" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="189" y="0.0" width="95" height="95"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="95" id="sJS-DF-tvT"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="95" id="zF8-j9-x5R"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="."/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="sJS-DF-tvT"/>
+                                                        <exclude reference="zF8-j9-x5R"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="sJS-DF-tvT"/>
+                                                        <exclude reference="zF8-j9-x5R"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="creatingDouble:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGg-9J-Zb4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yH-Dh-GUn" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
+                                                <rect key="frame" x="285" y="0.0" width="95" height="95"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="95" id="dcV-Om-f7D"/>
+                                                    <constraint firstAttribute="height" constant="95" id="x5G-B6-c4E"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="="/>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="dcV-Om-f7D"/>
+                                                        <exclude reference="x5G-B6-c4E"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="dcV-Om-f7D"/>
+                                                        <exclude reference="x5G-B6-c4E"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="calcandShowTheResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rDc-1b-yww"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4X-P3-evj" customClass="styleLblResultAndInput" customModule="CoolCalc3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="164" width="375" height="126"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C4X-P3-evj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6dV-Ac-bCv"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jvU-iL-yuV" secondAttribute="bottom" constant="20" id="Cdf-fU-gy3"/>
+                            <constraint firstItem="C4X-P3-evj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="McM-Sk-aW1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jvU-iL-yuV" secondAttribute="trailing" id="Uwv-5P-fEm"/>
+                            <constraint firstItem="jvU-iL-yuV" firstAttribute="top" secondItem="C4X-P3-evj" secondAttribute="bottom" constant="8" symbolic="YES" id="Vcu-T5-cO6"/>
+                            <constraint firstItem="C4X-P3-evj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="cS0-CW-WqJ"/>
+                            <constraint firstItem="jvU-iL-yuV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="254" id="h6D-ma-Qxa"/>
+                            <constraint firstItem="jvU-iL-yuV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ob0-Tw-6nZ"/>
+                            <constraint firstItem="xq6-ak-bne" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rh4-32-6h0"/>
+                        </constraints>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="Uwv-5P-fEm"/>
+                                <exclude reference="6dV-Ac-bCv"/>
+                                <exclude reference="McM-Sk-aW1"/>
+                                <exclude reference="cS0-CW-WqJ"/>
+                                <exclude reference="Cdf-fU-gy3"/>
+                                <exclude reference="Vcu-T5-cO6"/>
+                                <exclude reference="h6D-ma-Qxa"/>
+                                <exclude reference="ob0-Tw-6nZ"/>
+                                <exclude reference="rh4-32-6h0"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="Uwv-5P-fEm"/>
+                                <exclude reference="6dV-Ac-bCv"/>
+                                <exclude reference="McM-Sk-aW1"/>
+                                <exclude reference="cS0-CW-WqJ"/>
+                                <exclude reference="Cdf-fU-gy3"/>
+                                <exclude reference="Vcu-T5-cO6"/>
+                                <exclude reference="h6D-ma-Qxa"/>
+                                <exclude reference="ob0-Tw-6nZ"/>
+                                <exclude reference="rh4-32-6h0"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="eightBtn" destination="ox8-a5-tbu" id="GVO-dV-QUf"/>
+                        <outlet property="fiveBtn" destination="cXe-vr-4Vb" id="pfC-cG-akJ"/>
+                        <outlet property="fourBtn" destination="xPL-do-fGN" id="9ul-rf-CiB"/>
+                        <outlet property="ninebtn" destination="az4-mj-Xud" id="RaO-GU-zL3"/>
+                        <outlet property="oneBtn" destination="T4F-xQ-ziy" id="8P5-ZW-uwL"/>
+                        <outlet property="pointBtn" destination="Tct-uO-E8f" id="t5j-m5-si9"/>
+                        <outlet property="resultAndEnteringLbl" destination="C4X-P3-evj" id="ei9-O2-v9A"/>
+                        <outlet property="sevenBtn" destination="cyF-PU-3Bs" id="JoL-MI-MgE"/>
+                        <outlet property="sixBtn" destination="mjF-b6-m1X" id="tlR-jq-QIS"/>
+                        <outlet property="threeBtn" destination="9HQ-u8-3NA" id="5D4-Re-ohj"/>
+                        <outlet property="twoBtn" destination="40k-Nl-pON" id="nqO-Bd-mww"/>
+                        <outlet property="zeroBtn" destination="jIA-al-fi5" id="LGZ-zw-Ok9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137" y="-537"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="40k-Nl-pON">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="4yH-Dh-GUn">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="9HQ-u8-3NA">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="BgD-nX-Rdr">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="C4X-P3-evj">
+            <size key="intrinsicContentSize" width="39.666666666666664" height="77.666666666666671"/>
+        </designable>
+        <designable name="Ef9-pW-eSV">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="T4F-xQ-ziy">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="Tct-uO-E8f">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="az4-mj-Xud">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="bPw-dW-4R5">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="cPT-bT-Cre">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="cXe-vr-4Vb">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="cyF-PU-3Bs">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="jIA-al-fi5">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="m6K-qd-rYU">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="mjF-b6-m1X">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="ox8-a5-tbu">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="tRT-5v-KgH">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="xPL-do-fGN">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="yzs-I3-n6g">
+            <size key="intrinsicContentSize" width="41" height="48"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

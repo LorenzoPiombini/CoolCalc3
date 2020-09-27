@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		743E76B4251F6256004582DD /* functionClassVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743E76B3251F6256004582DD /* functionClassVariables.swift */; };
 		744D4364251F115000026285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D4363251F115000026285 /* AppDelegate.swift */; };
 		744D4366251F115000026285 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D4365251F115000026285 /* SceneDelegate.swift */; };
 		744D4368251F115000026285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D4367251F115000026285 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 		744D4373251F115100026285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744D4371251F115100026285 /* LaunchScreen.storyboard */; };
 		744D437E251F115100026285 /* CoolCalc3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D437D251F115100026285 /* CoolCalc3Tests.swift */; };
 		744D4389251F115100026285 /* CoolCalc3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D4388251F115100026285 /* CoolCalc3UITests.swift */; };
+		744D439E251F197600026285 /* styleLblResultAndInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D439D251F197600026285 /* styleLblResultAndInput.swift */; };
+		744D43A3251F19A400026285 /* styleNumbersBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D43A2251F19A400026285 /* styleNumbersBtn.swift */; };
+		744D43A8251F19C900026285 /* styleOtherBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D43A7251F19C900026285 /* styleOtherBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		743E76B3251F6256004582DD /* functionClassVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionClassVariables.swift; sourceTree = "<group>"; };
 		744D4360251F115000026285 /* CoolCalc3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolCalc3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		744D4363251F115000026285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		744D4365251F115000026285 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +56,9 @@
 		744D4384251F115100026285 /* CoolCalc3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolCalc3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		744D4388251F115100026285 /* CoolCalc3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolCalc3UITests.swift; sourceTree = "<group>"; };
 		744D438A251F115100026285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		744D439D251F197600026285 /* styleLblResultAndInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleLblResultAndInput.swift; sourceTree = "<group>"; };
+		744D43A2251F19A400026285 /* styleNumbersBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleNumbersBtn.swift; sourceTree = "<group>"; };
+		744D43A7251F19C900026285 /* styleOtherBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleOtherBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		743E76AF251F6223004582DD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				743E76B3251F6256004582DD /* functionClassVariables.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		744D4357251F115000026285 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +117,8 @@
 		744D4362251F115000026285 /* CoolCalc3 */ = {
 			isa = PBXGroup;
 			children = (
+				743E76AF251F6223004582DD /* Modules */,
+				744D4399251F18AC00026285 /* views */,
 				744D4363251F115000026285 /* AppDelegate.swift */,
 				744D4365251F115000026285 /* SceneDelegate.swift */,
 				744D4367251F115000026285 /* ViewController.swift */,
@@ -129,6 +147,16 @@
 				744D438A251F115100026285 /* Info.plist */,
 			);
 			path = CoolCalc3UITests;
+			sourceTree = "<group>";
+		};
+		744D4399251F18AC00026285 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				744D439D251F197600026285 /* styleLblResultAndInput.swift */,
+				744D43A2251F19A400026285 /* styleNumbersBtn.swift */,
+				744D43A7251F19C900026285 /* styleOtherBtn.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +290,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				744D4368251F115000026285 /* ViewController.swift in Sources */,
+				744D43A8251F19C900026285 /* styleOtherBtn.swift in Sources */,
 				744D436E251F115000026285 /* CoolCalc3.xcdatamodeld in Sources */,
 				744D4364251F115000026285 /* AppDelegate.swift in Sources */,
+				743E76B4251F6256004582DD /* functionClassVariables.swift in Sources */,
+				744D43A3251F19A400026285 /* styleNumbersBtn.swift in Sources */,
 				744D4366251F115000026285 /* SceneDelegate.swift in Sources */,
+				744D439E251F197600026285 /* styleLblResultAndInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
