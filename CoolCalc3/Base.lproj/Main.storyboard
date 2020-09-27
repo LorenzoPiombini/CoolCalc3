@@ -53,11 +53,17 @@
                                                 <rect key="frame" x="95" y="0.0" width="95" height="95"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="+/-"/>
+                                                <connections>
+                                                    <action selector="puttingMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0rg-Jt-K7C"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-nX-Rdr" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
                                                 <rect key="frame" x="190" y="0.0" width="95" height="95"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="%"/>
+                                                <connections>
+                                                    <action selector="percentageBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLG-IG-56w"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-5v-KgH" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
                                                 <rect key="frame" x="285" y="0.0" width="95" height="95"/>

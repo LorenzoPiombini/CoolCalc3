@@ -2,7 +2,7 @@
 //  functionClassVariables.swift
 //  CoolCalc3
 //
-//  Created by Lorenzo piombini on 9/26/20.
+//  Created by Lorenzo Piombini on 9/26/20.
 //
 
 import Foundation
@@ -152,10 +152,25 @@ func sub(first: String, andSecond:String) -> String {
         }
      return result
         
-        }
-    func percentage() {
+    }
+    func percentage(first: String, andSecond:String )-> String{
+        var result:String = ""
+        if  first.contains(".") || andSecond.contains("."){
+           let doubleFirst = Double(first)!
+           let doubleSecond = Double(andSecond)!
+            result = "\((doubleFirst / doubleSecond)/100)"}
+        else if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+            if  integerFirst % integerSecond == 0 {
+                result = "\((integerFirst * integerSecond)/100)"
+            }else {
+                result = "\(Double((integerFirst * integerSecond)/100))"
+            }
+            }
+     return result
         
+        }
+
+ 
     }
 
-}
 let number = Number()
