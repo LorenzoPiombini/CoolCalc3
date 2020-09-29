@@ -71,47 +71,95 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func clearbtn(_ sender: Any) {
-        if userInput.isEmpty == false {
-            resultAndEnteringLbl.text = "0"
-            
-        } else if resultAndEnteringLbl.text!.count > 1{
+    
+    @IBAction func delBtn(_ sender: Any) {
+        if resultAndEnteringLbl.text!.count > 1{
             resultAndEnteringLbl.text!.popLast()
-            
-        }else{
+        }else {
+            resultAndEnteringLbl.text = "0"
+        }
+    }
+    
+    @IBAction func clearbtn(_ sender: Any) {
         resultAndEnteringLbl.text = "0"
         first = ""
         second = ""
         operationclicked = false
         endTask = false
         userInput = ""
-        }
+        counter = 0
+        link = false
     }
     
     
     
     @IBAction func givingOperatorsDiv(_ sender: Any) {
-        first = resultAndEnteringLbl.text
-        userInput = number.division
-        operationclicked = true
+        
+        if link == true {
+            resultAndEnteringLbl.text = equalAction(givenNumber: resultAndEnteringLbl)
+            first = resultAndEnteringLbl.text
+            userInput = number.division
+            operationclicked = true
+            link = true
+        } else{
+            first = resultAndEnteringLbl.text
+            userInput = number.division
+            operationclicked = true
+            link = true
+        }
+        
+        
     }
     
     @IBAction func givingOperatorsMult(_ sender: Any) {
-        first = resultAndEnteringLbl.text
-        userInput = number.multiplication
-        operationclicked = true
+        if link == true {
+            resultAndEnteringLbl.text = equalAction(givenNumber: resultAndEnteringLbl)
+            first = resultAndEnteringLbl.text
+            userInput = number.multiplication
+            operationclicked = true
+            link = true
+        } else{
+            first = resultAndEnteringLbl.text
+            userInput = number.multiplication
+            operationclicked = true
+            link = true
+        }
+       
     }
     
     @IBAction func givingOperatorsAdd(_ sender: Any) {
+        if link == true {
+            resultAndEnteringLbl.text = equalAction(givenNumber: resultAndEnteringLbl)
+            first = resultAndEnteringLbl.text
+            userInput = number.addition
+            operationclicked = true
+            link = true
+        } else{
         first = resultAndEnteringLbl.text
         userInput = number.addition
         operationclicked = true
+        link = true
+        }
+        
+            
+        
     }
     
     @IBAction func givingOperatorSub(_ sender: Any) {
+        if link == true {
+            resultAndEnteringLbl.text = equalAction(givenNumber: resultAndEnteringLbl)
+            first = resultAndEnteringLbl.text
+            userInput = number.subtraction
+            operationclicked = true
+            link = true
+        } else{
         first = resultAndEnteringLbl.text
         userInput = number.subtraction
         operationclicked = true
+        link = true
+        }
+        
+        
     }
     
     
@@ -145,6 +193,8 @@ class ViewController: UIViewController {
         case "+":
             resultAndEnteringLbl.text = number.add(first: first!, andSecond: resultAndEnteringLbl.text!)
             operationclicked = false
+            counter += 1
+            link = false
         case "-":
             if endTask == false {
                 second = resultAndEnteringLbl.text
@@ -153,6 +203,8 @@ class ViewController: UIViewController {
                 resultAndEnteringLbl.text = number.sub(first: resultAndEnteringLbl.text!, andSecond: second!)
             }
             operationclicked = false
+            counter += 1
+            link = false
         case "/":
             if endTask == false {
                 second = resultAndEnteringLbl.text
@@ -161,9 +213,30 @@ class ViewController: UIViewController {
                 resultAndEnteringLbl.text = number.div(first: resultAndEnteringLbl.text!, andSecond: second!)
             }
             operationclicked = false
+            counter += 1
+            link = false
         case "*":
+            // here I tryed to prevet the Over Flow issue with the Int type
+            // I tryed also to look into Documentation, it was`t that clear .
+            if resultAndEnteringLbl.text!.count >= 17  {
+                if let isaInt = Int64 (resultAndEnteringLbl.text!){
+                    resultAndEnteringLbl.text = "stop calc! preventing over Flow"
+                    operationclicked = false
+                    counter += 1
+                    link = false
+                }else if let isaDouble = Double(resultAndEnteringLbl.text!){
+                    resultAndEnteringLbl.text = number.multiply(first: first!, andSecond: resultAndEnteringLbl.text!)
+                    operationclicked = false
+                    counter += 1
+                    link = false
+                }} else {
             resultAndEnteringLbl.text = number.multiply(first: first!, andSecond: resultAndEnteringLbl.text!)
             operationclicked = false
+            counter += 1
+            link = false
+            }
+        case "":
+            break
         default:
             resultAndEnteringLbl.text = "Not a number"
         }
@@ -176,7 +249,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 
 

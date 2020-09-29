@@ -9,6 +9,10 @@ import UIKit
 
 @IBDesignable
 class styleOtherBtn: UIButton {
+    
+    override func draw(_ rect: CGRect) {
+        
+    }
     override func prepareForInterfaceBuilder() {
         customBtnOperator()
     }
@@ -24,6 +28,7 @@ class styleOtherBtn: UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
         setTitleColor(UIColor.white, for: .normal)
+        
     }
 
 

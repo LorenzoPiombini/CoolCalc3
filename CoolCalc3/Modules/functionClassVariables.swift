@@ -15,8 +15,77 @@ var second:String? = ""
 var operationclicked = false
 var endTask = false
 var result = ""
+var counter = 0
+var link = false
+var history: [String] = []
+
+// function to allowed any operators btn to act like a equals btn
+// I created this func days after the equals btn
+func equalAction (givenNumber: UILabel) -> String{
+    
+    switch userInput {
+    case "+":
+        givenNumber.text = number.add(first: first!, andSecond: givenNumber.text!)
+        operationclicked = false
+        counter += 1
+        endTask = true
+        return givenNumber.text!
+    case "-":
+        if endTask == false {
+            second = givenNumber.text
+            givenNumber.text = number.sub(first: first!, andSecond: givenNumber.text!)
+        } else {
+            givenNumber.text = number.sub(first: givenNumber.text!, andSecond: second!)
+        }
+        operationclicked = false
+        counter += 1
+        endTask = true
+        return givenNumber.text!
+    case "/":
+        if endTask == false {
+            second = givenNumber.text
+            givenNumber.text = number.div(first: first!, andSecond: givenNumber.text!)
+        } else {
+            givenNumber.text = number.div(first: givenNumber.text!, andSecond: second!)
+        }
+        operationclicked = false
+        counter += 1
+        endTask = true
+        return givenNumber.text!
+    case "*":
+        givenNumber.text = number.multiply(first: first!, andSecond: givenNumber.text!)
+        operationclicked = false
+        counter += 1
+        endTask = true
+        return givenNumber.text!
+    default:
+        givenNumber.text = "Not a number"
+        return givenNumber.text!
+    }
+    
+}
+//I tryed to use the Overflow method fomr Swift but it is quite confusing for now
+//then I create this function to prevent the over flow along the multiply operation to hable the overflow myself, creating a Double with more bit space in the memory avoinding in this way the crash due to over flow
+
+func chekingOverFlow (forThisResult: Int) -> String{
+    var newTypeToPreventOverFlow:Double = 0
+    var chekingIfItIsADoubleAlready:String = "\(forThisResult)"
+    var result = ""
+    if chekingIfItIsADoubleAlready.contains(".") {
+        result = chekingIfItIsADoubleAlready
+    } else if forThisResult > 1000000 {
+        newTypeToPreventOverFlow = Double((forThisResult))
+        result = "\(newTypeToPreventOverFlow)"
+        result.popLast() //to make the result looking like an Int
+        result.popLast() //because if we reach this point we are talking about an int! so I am deleting the .0 from the number
+    }else {
+        result = "\(forThisResult)"
+    }
+    return result
+}
 
 
+//functions to configure the button numbers, and showing the numbers on the Label
 func autofill(forthisBtn: UIButton, andthisLbl: UILabel){
     var  title = forthisBtn.titleLabel
     var value:String = ""
@@ -49,20 +118,29 @@ func autofill(forthisBtn: UIButton, andthisLbl: UILabel){
     default:
       let  _ = ""
     }
-//    if endTask == true || userInput == "" || userInput.isEmpty == false {
-    if andthisLbl.text == "0" || endTask == true {
+    
+    //conditional structure to perform a correct input
+    //as more then one digit, the point to make it decimal and so on..
+    
+    if value == "." && andthisLbl.text == "0" {
+        andthisLbl.text?.append("\(value)")
+    }else if (andthisLbl.text == "0" && counter == 0) || (endTask == true ){
          andthisLbl.text = "\(value)"
          endTask = false
-        
-    } else if andthisLbl.text != "0" && operationclicked == false  {andthisLbl.text?.append("\(value)")
-    } else if operationclicked == true && andthisLbl.text?.isEmpty == false {
-        andthisLbl.text = "\(value)"
-        operationclicked = false
-    } else {
+    } else if andthisLbl.text != "0" && operationclicked == false{
+        andthisLbl.text?.append("\(value)")
+    } else if andthisLbl.text != "0" && operationclicked == true && counter > 0{
         andthisLbl.text?.append("\(value)")
     }
-//    }
+    else if operationclicked == true && andthisLbl.text?.isEmpty == false {
+        andthisLbl.text = "\(value)"
+        operationclicked = false
+        counter = 0
+    } else if operationclicked == true && andthisLbl.text?.isEmpty == false{
+        andthisLbl.text = "\(value)"
+    }
 }
+
 
 
 class Number {
@@ -104,8 +182,11 @@ class Number {
     
     func add (first: String, andSecond:String )-> String{
         var result:String = ""
+        var managingOverFlow:Int = 0
+        
         if let integerFirst = Int(first), let integerSecond = Int(andSecond){
-                result = "\(integerFirst + integerSecond)"
+           managingOverFlow = integerFirst + integerSecond
+            result = "\(managingOverFlow)"
             } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
             result = "\(doubleFirst + doubleSecond)"
         }
@@ -145,8 +226,9 @@ func sub(first: String, andSecond:String) -> String {
         
     func multiply(first: String, andSecond:String )-> String{
         var result:String = ""
-        if let integerFirst = Int(first), let integerSecond = Int(andSecond){
-                result = "\(integerFirst * integerSecond)"
+        if let integerFirst = Int64(first), let integerSecond = Int64(andSecond){
+             result = "\(integerFirst * integerSecond)"
+            
             } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
             result = "\(doubleFirst * doubleSecond)"
         }

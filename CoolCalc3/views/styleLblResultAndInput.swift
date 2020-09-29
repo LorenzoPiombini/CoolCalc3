@@ -21,13 +21,13 @@ class styleLblResultAndInput: UILabel {
     }
 
     func customLbl(){
-        backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         layer.cornerRadius = 5
         textColor = .white
         textAlignment = .right
         text = "0"
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.4
+        minimumScaleFactor = 0.1
         
        
     }
