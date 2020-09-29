@@ -5,83 +5,141 @@
 //  Created by Lorenzo Piombini on 9/26/20.
 //
 
+
+
 import Foundation
 import UIKit
 
+// global declaration, these variables are bricks that helped me a lot in building the App, I use them to struct the If scafolding which makes the calc works!
 
 var userInput:String = ""
 var first:String? = ""
 var second:String? = ""
 var operationclicked = false
-var endTask = false
-var result = ""
-var counter = 0
+var endTask = false // to handle an User option like linking more than one calcs
+var result = "" 
+var counter = 0 // the same as above, variable used in if concatenation to handle some user behavior
 var link = false
-var history: [String] = []
+var history: [String] = [] // this is for the history btn, not installed yet, however I will add it in the future, I personally find it really helpful to see your old math operation
 
 // function to allowed any operators btn to act like a equals btn
-// I created this func days after the equals btn
+// I created this func days after the equals btn and Userexperience wise
+// I think it should be slighty different than the equal btn
+// after making my code little dry I think this func has to be in place in order to avoid crash due to over flow and handle user experience like alowed +  -  / to behave like an = btn.
 func equalAction (givenNumber: UILabel) -> String{
     
     switch userInput {
     case "+":
-        givenNumber.text = number.add(first: first!, andSecond: givenNumber.text!)
-        operationclicked = false
-        counter += 1
-        endTask = true
+        givenNumber.text = makingtheMath(first: first!, andSecond: givenNumber.text!, forThisOperator: userInput)
+        
         return givenNumber.text!
     case "-":
         if endTask == false {
             second = givenNumber.text
-            givenNumber.text = number.sub(first: first!, andSecond: givenNumber.text!)
+            givenNumber.text = makingtheMath(first: first!, andSecond: givenNumber.text!, forThisOperator: userInput)
         } else {
-            givenNumber.text = number.sub(first: givenNumber.text!, andSecond: second!)
+            givenNumber.text = makingtheMath(first: first!, andSecond: givenNumber.text!, forThisOperator: userInput)
         }
-        operationclicked = false
-        counter += 1
-        endTask = true
         return givenNumber.text!
     case "/":
         if endTask == false {
             second = givenNumber.text
-            givenNumber.text = number.div(first: first!, andSecond: givenNumber.text!)
+            givenNumber.text = makingtheMath(first: first!, andSecond: givenNumber.text!, forThisOperator: userInput)
         } else {
-            givenNumber.text = number.div(first: givenNumber.text!, andSecond: second!)
+            givenNumber.text = makingtheMath(first: first!, andSecond: givenNumber.text!, forThisOperator: userInput)
         }
-        operationclicked = false
-        counter += 1
-        endTask = true
+        
         return givenNumber.text!
-    case "*":
-        givenNumber.text = number.multiply(first: first!, andSecond: givenNumber.text!)
-        operationclicked = false
-        counter += 1
-        endTask = true
-        return givenNumber.text!
+
+        case "*":
+            if counter == 0 {
+                givenNumber.text = makingtheMath(first: first!, andSecond: givenNumber.text!, forThisOperator: userInput)
+            operationclicked = false
+            counter += 1
+            link = false
+            }
+           
+         return givenNumber.text!
+
     default:
         givenNumber.text = "Not a number"
         return givenNumber.text!
     }
     
 }
-//I tryed to use the Overflow method fomr Swift but it is quite confusing for now
-//then I create this function to prevent the over flow along the multiply operation to hable the overflow myself, creating a Double with more bit space in the memory avoinding in this way the crash due to over flow
 
-func chekingOverFlow (forThisResult: Int) -> String{
-    var newTypeToPreventOverFlow:Double = 0
-    var chekingIfItIsADoubleAlready:String = "\(forThisResult)"
-    var result = ""
-    if chekingIfItIsADoubleAlready.contains(".") {
-        result = chekingIfItIsADoubleAlready
-    } else if forThisResult > 1000000 {
-        newTypeToPreventOverFlow = Double((forThisResult))
-        result = "\(newTypeToPreventOverFlow)"
-        result.popLast() //to make the result looking like an Int
-        result.popLast() //because if we reach this point we are talking about an int! so I am deleting the .0 from the number
-    }else {
-        result = "\(forThisResult)"
+// I am studying my code over and i think it is not really DRY,
+// i will provide a better version:
+// i`m putting together peaces of my code
+
+func makingtheMath (first: String, andSecond:String, forThisOperator: String) -> String{
+    
+    var result:String = ""
+    
+    
+    switch forThisOperator {
+    case "+":
+        if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+            result = "\(integerFirst + integerSecond )"
+
+            } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+            result = "\(doubleFirst + doubleSecond)"
+        }
+        operationclicked = false
+        counter += 1
+        link = false
+        endTask = true
+     return result
+        
+    case "-":
+       
+        if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+                result = "\(integerFirst - integerSecond)"
+            } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+                result = "\(doubleFirst - doubleSecond)"
+            }
+        operationclicked = false
+        counter += 1
+        link = false
+        endTask = true
+         return result
+        
+    case "*":
+    if let integerFirst = Int64(first), let integerSecond = Int64(andSecond){
+         result = "\(integerFirst * integerSecond)"
+        
+        } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+        result = "\(doubleFirst * doubleSecond)"
+        }
+        operationclicked = false
+        counter += 1
+        link = false
+        endTask = true
+ return result
+    case "/":
+    if andSecond == "0"{
+        result = "Not a number"
+    }else if  first.contains(".") || andSecond.contains("."){
+        let doubleFirst = Double(first)!
+        let doubleSecond = Double(andSecond)!
+        result = "\(doubleFirst / doubleSecond)"
+    }else if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+        if  integerFirst % integerSecond == 0 {
+            result = "\(integerFirst / integerSecond)"
+        }else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+        result = "\(doubleFirst / doubleSecond)"
     }
+    }
+        operationclicked = false
+        counter += 1
+        link = false
+        endTask = true
     return result
+    default :
+        return ""
+    }
+    
+    
 }
 
 
@@ -121,15 +179,28 @@ func autofill(forthisBtn: UIButton, andthisLbl: UILabel){
     
     //conditional structure to perform a correct input
     //as more then one digit, the point to make it decimal and so on..
+    //i tryed to prevent any options with debugging
+    // and i probably need to check it better cause i think there are some tests they will never happen
     
     if value == "." && andthisLbl.text == "0" {
         andthisLbl.text?.append("\(value)")
-    }else if (andthisLbl.text == "0" && counter == 0) || (endTask == true ){
+    }else if (andthisLbl.text == "0" && counter == 0) || (endTask == true )  {
          andthisLbl.text = "\(value)"
          endTask = false
     } else if andthisLbl.text != "0" && operationclicked == false{
         andthisLbl.text?.append("\(value)")
-    } else if andthisLbl.text != "0" && operationclicked == true && counter > 0{
+        
+    }else if andthisLbl.text != "0" && link == true && counter >= 1 && operationclicked == true && endTask == true {
+        andthisLbl.text = ("\(value)")
+        operationclicked = false
+    
+    }else if andthisLbl.text != "0" && link == true && counter >= 1 && operationclicked == false && endTask == true {
+        andthisLbl.text?.append("\(value)")
+    }else if andthisLbl.text != "0" && link == true && counter >= 1 && operationclicked == true {
+        andthisLbl.text?.append("\(value)")
+}else if andthisLbl.text != "0" && link == true && counter > 1 && operationclicked == false  {
+        andthisLbl.text = "\(value)"
+    }else if andthisLbl.text != "0" && operationclicked == true && counter > 1{
         andthisLbl.text?.append("\(value)")
     }
     else if operationclicked == true && andthisLbl.text?.isEmpty == false {
@@ -142,6 +213,8 @@ func autofill(forthisBtn: UIButton, andthisLbl: UILabel){
 }
 
 
+// i created a class but after all of the work done, i think it doesen`t make much sense
+// i leave it in place anyway cause it works ! and I am waiting for your suggestion!
 
 class Number {
     var point:String
@@ -180,79 +253,88 @@ class Number {
         division = "/"
     }
     
-    func add (first: String, andSecond:String )-> String{
-        var result:String = ""
-        var managingOverFlow:Int = 0
-        
-        if let integerFirst = Int(first), let integerSecond = Int(andSecond){
-           managingOverFlow = integerFirst + integerSecond
-            result = "\(managingOverFlow)"
-            } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
-            result = "\(doubleFirst + doubleSecond)"
-        }
-     return result
-        
-        }
-    
-func sub(first: String, andSecond:String) -> String {
-        var result:String = ""
-    if let integerFirst = Int(first), let integerSecond = Int(andSecond){
-            result = "\(integerFirst - integerSecond)"
-        } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
-            result = "\(doubleFirst - doubleSecond)"
-        }
-     return result
-    }
-    
-    
-    
-    func div(first: String, andSecond:String) -> String {
-        var result:String = ""
-        if andSecond == "0"{
-            result = "Not a number"
-        }else if  first.contains(".") || andSecond.contains("."){
-            let doubleFirst = Double(first)!
-            let doubleSecond = Double(andSecond)!
-            result = "\(doubleFirst / doubleSecond)"
-        }else if let integerFirst = Int(first), let integerSecond = Int(andSecond){
-            if  integerFirst % integerSecond == 0 {
-                result = "\(integerFirst / integerSecond)"
-            }else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
-            result = "\(doubleFirst / doubleSecond)"
-        }
-        }
-        return result
-    }
-        
-    func multiply(first: String, andSecond:String )-> String{
-        var result:String = ""
-        if let integerFirst = Int64(first), let integerSecond = Int64(andSecond){
-             result = "\(integerFirst * integerSecond)"
-            
-            } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
-            result = "\(doubleFirst * doubleSecond)"
-        }
-     return result
-        
-    }
-    func percentage(first: String, andSecond:String )-> String{
-        var result:String = ""
-        if  first.contains(".") || andSecond.contains("."){
-           let doubleFirst = Double(first)!
-           let doubleSecond = Double(andSecond)!
-            result = "\((doubleFirst / doubleSecond)/100)"}
-        else if let integerFirst = Int(first), let integerSecond = Int(andSecond){
-            if  integerFirst % integerSecond == 0 {
-                result = "\((integerFirst * integerSecond)/100)"
-            }else {
-                result = "\(Double((integerFirst * integerSecond)/100))"
-            }
-            }
-     return result
-        
-        }
 
- 
+    
+    
+    
+//this was the old code before understanding it was not dry
+// so i put everything together under the func makingTheMath
+   
+    
+//    func add (first: String, andSecond:String )-> String{
+//        var result:String = ""
+//        var managingOverFlow:Int = 0
+//
+//        if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+//           managingOverFlow = integerFirst + integerSecond
+//            result = "\(managingOverFlow)"
+//            } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+//            result = "\(doubleFirst + doubleSecond)"
+//        }
+//     return result
+//
+//        }
+//
+//func sub(first: String, andSecond:String) -> String {
+//        var result:String = ""
+//    if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+//            result = "\(integerFirst - integerSecond)"
+//        } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+//            result = "\(doubleFirst - doubleSecond)"
+//        }
+//     return result
+//    }
+//
+//
+//
+//    func div(first: String, andSecond:String) -> String {
+//        var result:String = ""
+//        if andSecond == "0"{
+//            result = "Not a number"
+//        }else if  first.contains(".") || andSecond.contains("."){
+//            let doubleFirst = Double(first)!
+//            let doubleSecond = Double(andSecond)!
+//            result = "\(doubleFirst / doubleSecond)"
+//        }else if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+//            if  integerFirst % integerSecond == 0 {
+//                result = "\(integerFirst / integerSecond)"
+//            }else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+//            result = "\(doubleFirst / doubleSecond)"
+//        }
+//        }
+//        return result
+//    }
+//
+//    func multiply(first: String, andSecond:String )-> String{
+//        var result:String = ""
+//        if let integerFirst = Int64(first), let integerSecond = Int64(andSecond){
+//             result = "\(integerFirst * integerSecond)"
+//
+//            } else if let doubleFirst = Double(first), let doubleSecond = Double(andSecond) {
+//            result = "\(doubleFirst * doubleSecond)"
+//        }
+//     return result
+//
+//    }
+//
+//    func percentage(first: String, andSecond:String )-> String{
+//        var result:String = ""
+//        if  first.contains(".") || andSecond.contains("."){
+//           let doubleFirst = Double(first)!
+//           let doubleSecond = Double(andSecond)!
+//            result = "\((doubleFirst / doubleSecond)/100)"}
+//        else if let integerFirst = Int(first), let integerSecond = Int(andSecond){
+//            if  integerFirst % integerSecond == 0 {
+//                result = "\((integerFirst * integerSecond)/100)"
+//            }else {
+//                result = "\(Double((integerFirst * integerSecond)/100))"
+//            }
+//            }
+//     return result
+//
+//        }
+//
+//
     }
 
 let number = Number()

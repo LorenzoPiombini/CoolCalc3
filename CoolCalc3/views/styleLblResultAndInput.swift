@@ -27,7 +27,7 @@ class styleLblResultAndInput: UILabel {
         textAlignment = .right
         text = "0"
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.1
+        minimumScaleFactor = 0.8
         
        
     }

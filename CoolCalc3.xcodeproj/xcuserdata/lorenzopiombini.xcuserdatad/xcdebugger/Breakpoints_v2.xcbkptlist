@@ -14,8 +14,8 @@
             filePath = "CoolCalc3/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "CoolCalc3/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -46,10 +46,10 @@
             filePath = "CoolCalc3/Modules/functionClassVariables.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "multiply(first:andSecond:)"
-            landmarkType = "7">
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "Number"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,26 +62,58 @@
             filePath = "CoolCalc3/Modules/functionClassVariables.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "multiply(first:andSecond:)"
-            landmarkType = "7">
+            startingLineNumber = "314"
+            endingLineNumber = "314"
+            landmarkName = "Number"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A162E596-8310-4FE7-B20F-AA55ED8B6B43"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoolCalc3/Modules/functionClassVariables.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "multiply(first:andSecond:)"
-            landmarkType = "7">
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "Number"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A162E596-8310-4FE7-B20F-AA55ED8B6B43 - 9387afde5bdbd9e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoolCalc3.Number.multiply(first: Swift.String, andSecond: Swift.String) -&gt; Swift.String"
+                  moduleName = "CoolCalc3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lorenzopiombini/Desktop/Devslopes%20accademy/Week%20Four/CoolCalc3/CoolCalc3/Modules/functionClassVariables.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "319"
+                  endingLineNumber = "319"
+                  offsetFromSymbolStart = "1076">
+               </Location>
+               <Location
+                  uuid = "A162E596-8310-4FE7-B20F-AA55ED8B6B43 - 9387afde5bdbd9e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoolCalc3.Number.multiply(first: Swift.String, andSecond: Swift.String) -&gt; Swift.String"
+                  moduleName = "CoolCalc3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lorenzopiombini/Desktop/Devslopes%20accademy/Week%20Four/CoolCalc3/CoolCalc3/Modules/functionClassVariables.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "319"
+                  endingLineNumber = "319"
+                  offsetFromSymbolStart = "1088">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,8 +126,8 @@
             filePath = "CoolCalc3/Modules/functionClassVariables.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
             landmarkName = "Number"
             landmarkType = "3">
          </BreakpointContent>
@@ -110,10 +142,90 @@
             filePath = "CoolCalc3/Modules/functionClassVariables.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "multiply(first:andSecond:)"
-            landmarkType = "7">
+            startingLineNumber = "309"
+            endingLineNumber = "309"
+            landmarkName = "Number"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "150C3FA2-441C-4699-AB9E-B8F91A8F7903"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoolCalc3/Modules/functionClassVariables.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67DF3135-CD7E-429A-AE98-559CBE58C1B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoolCalc3/Modules/functionClassVariables.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "Number"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "67DF3135-CD7E-429A-AE98-559CBE58C1B6 - 9387afde5bdbd9e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoolCalc3.Number.multiply(first: Swift.String, andSecond: Swift.String) -&gt; Swift.String"
+                  moduleName = "CoolCalc3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lorenzopiombini/Desktop/Devslopes%20accademy/Week%20Four/CoolCalc3/CoolCalc3/Modules/functionClassVariables.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "319"
+                  endingLineNumber = "319"
+                  offsetFromSymbolStart = "1076">
+               </Location>
+               <Location
+                  uuid = "67DF3135-CD7E-429A-AE98-559CBE58C1B6 - 9387afde5bdbd9e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoolCalc3.Number.multiply(first: Swift.String, andSecond: Swift.String) -&gt; Swift.String"
+                  moduleName = "CoolCalc3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lorenzopiombini/Desktop/Devslopes%20accademy/Week%20Four/CoolCalc3/CoolCalc3/Modules/functionClassVariables.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "319"
+                  endingLineNumber = "319"
+                  offsetFromSymbolStart = "1088">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61DE7A77-4CBE-442B-BF16-F61A054E760F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoolCalc3/Modules/functionClassVariables.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "autofill(forthisBtn:andthisLbl:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

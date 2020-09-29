@@ -101,11 +101,13 @@ class ViewController: UIViewController {
             userInput = number.division
             operationclicked = true
             link = true
+            
         } else{
             first = resultAndEnteringLbl.text
             userInput = number.division
             operationclicked = true
             link = true
+            
         }
         
         
@@ -118,11 +120,13 @@ class ViewController: UIViewController {
             userInput = number.multiplication
             operationclicked = true
             link = true
+            
         } else{
             first = resultAndEnteringLbl.text
             userInput = number.multiplication
             operationclicked = true
             link = true
+            
         }
        
     }
@@ -134,11 +138,13 @@ class ViewController: UIViewController {
             userInput = number.addition
             operationclicked = true
             link = true
+            
         } else{
         first = resultAndEnteringLbl.text
         userInput = number.addition
         operationclicked = true
         link = true
+            
         }
         
             
@@ -166,7 +172,7 @@ class ViewController: UIViewController {
     @IBAction func percentageBtn(_ sender: Any) {
         switch userInput {
         case "*":
-            resultAndEnteringLbl.text = "\((Double(number.multiply(first: first!, andSecond: resultAndEnteringLbl.text!))!)/100)"
+            resultAndEnteringLbl.text = "\(((Double(makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)))!)/100)"
             operationclicked = false
         default:
             break
@@ -188,52 +194,45 @@ class ViewController: UIViewController {
     
     
     @IBAction func calcandShowTheResult(_ sender: Any) {
+        // I tryed to put everything together hovere in ythis case
+        // i will leave this switch right there ! cause it is useful to avoid
+        // some crushes
         
         switch userInput {
         case "+":
-            resultAndEnteringLbl.text = number.add(first: first!, andSecond: resultAndEnteringLbl.text!)
-            operationclicked = false
-            counter += 1
-            link = false
+            resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
+           
         case "-":
             if endTask == false {
                 second = resultAndEnteringLbl.text
-            resultAndEnteringLbl.text = number.sub(first: first!, andSecond: resultAndEnteringLbl.text!)
+                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
             } else {
-                resultAndEnteringLbl.text = number.sub(first: resultAndEnteringLbl.text!, andSecond: second!)
+                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
             }
-            operationclicked = false
-            counter += 1
-            link = false
+            
         case "/":
             if endTask == false {
                 second = resultAndEnteringLbl.text
-            resultAndEnteringLbl.text = number.div(first: first!, andSecond: resultAndEnteringLbl.text!)
+                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
             } else {
-                resultAndEnteringLbl.text = number.div(first: resultAndEnteringLbl.text!, andSecond: second!)
+                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
             }
-            operationclicked = false
-            counter += 1
-            link = false
+            
         case "*":
             // here I tryed to prevet the Over Flow issue with the Int type
             // I tryed also to look into Documentation, it was`t that clear .
             if resultAndEnteringLbl.text!.count >= 17  {
-                if let isaInt = Int64 (resultAndEnteringLbl.text!){
+                if let isAnInt = Int64 (resultAndEnteringLbl.text!){
                     resultAndEnteringLbl.text = "stop calc! preventing over Flow"
                     operationclicked = false
                     counter += 1
                     link = false
-                }else if let isaDouble = Double(resultAndEnteringLbl.text!){
-                    resultAndEnteringLbl.text = number.multiply(first: first!, andSecond: resultAndEnteringLbl.text!)
-                    operationclicked = false
-                    counter += 1
-                    link = false
+                }else if let isADouble = Double(resultAndEnteringLbl.text!){
+                    resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
+                    
                 }} else {
-            resultAndEnteringLbl.text = number.multiply(first: first!, andSecond: resultAndEnteringLbl.text!)
-            operationclicked = false
-            counter += 1
-            link = false
+                    resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
+           
             }
         case "":
             break
