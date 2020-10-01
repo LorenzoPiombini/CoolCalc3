@@ -82,11 +82,17 @@ class ViewController: UIViewController {
     
     @IBAction func clearbtn(_ sender: Any) {
         resultAndEnteringLbl.text = "0"
+        userInput = ""
         first = ""
         second = ""
         operationclicked = false
+        conc = false
+        calcWithPoint = true
+        forceTheInput = true
+        handleInput = true
         endTask = false
-        userInput = ""
+        result = ""
+        forceTheInputWithZeroPoint = false
         counter = 0
         link = false
     }
@@ -121,14 +127,14 @@ class ViewController: UIViewController {
             operationclicked = true
             link = true
             
-        } else{
+        } else {
             first = resultAndEnteringLbl.text
             userInput = number.multiplication
             operationclicked = true
             link = true
-            
+           
         }
-       
+        
     }
     
     @IBAction func givingOperatorsAdd(_ sender: Any) {
@@ -158,11 +164,13 @@ class ViewController: UIViewController {
             userInput = number.subtraction
             operationclicked = true
             link = true
+            
         } else{
         first = resultAndEnteringLbl.text
         userInput = number.subtraction
         operationclicked = true
         link = true
+            
         }
         
         
@@ -172,7 +180,11 @@ class ViewController: UIViewController {
     @IBAction func percentageBtn(_ sender: Any) {
         switch userInput {
         case "*":
-            resultAndEnteringLbl.text = "\(((Double(makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)))!)/100)"
+            resultAndEnteringLbl.text = "\((Double(multiply(first: first!, andSecond: resultAndEnteringLbl.text!))!)/100)"
+            if resultAndEnteringLbl.text!.contains(".0") {
+                resultAndEnteringLbl.text!.popLast()
+                resultAndEnteringLbl.text!.popLast()
+            }
             operationclicked = false
         default:
             break
@@ -194,30 +206,36 @@ class ViewController: UIViewController {
     
     
     @IBAction func calcandShowTheResult(_ sender: Any) {
-        // I tryed to put everything together hovere in ythis case
-        // i will leave this switch right there ! cause it is useful to avoid
-        // some crushes
+        
         
         switch userInput {
         case "+":
-            resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
-           
+            resultAndEnteringLbl.text = add(first: first!, andSecond: resultAndEnteringLbl.text!)
+            operationclicked = false
+            counter += 1
+            link = false
         case "-":
+            //this first if is to set the Operator btn acting like an equal btn
+            // with using endTask the program knows that if it is false the user did not pres the equal btn, however i thought was nice to set this btn as an equal to repet always the same math
             if endTask == false {
                 second = resultAndEnteringLbl.text
-                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
+            resultAndEnteringLbl.text = sub(first: first!, andSecond: resultAndEnteringLbl.text!)
             } else {
-                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
+                resultAndEnteringLbl.text = sub(first: resultAndEnteringLbl.text!, andSecond: second!)
             }
-            
+            operationclicked = false
+            counter += 1
+            link = false
         case "/":
             if endTask == false {
                 second = resultAndEnteringLbl.text
-                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
+            resultAndEnteringLbl.text = div(first: first!, andSecond: resultAndEnteringLbl.text!)
             } else {
-                resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
+                resultAndEnteringLbl.text = div(first: resultAndEnteringLbl.text!, andSecond: second!)
             }
-            
+            operationclicked = false
+            counter += 1
+            link = false
         case "*":
             // here I tryed to prevet the Over Flow issue with the Int type
             // I tryed also to look into Documentation, it was`t that clear .
@@ -228,11 +246,15 @@ class ViewController: UIViewController {
                     counter += 1
                     link = false
                 }else if let isADouble = Double(resultAndEnteringLbl.text!){
-                    resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
-                    
+                    resultAndEnteringLbl.text = multiply(first: first!, andSecond: resultAndEnteringLbl.text!)
+                    operationclicked = false
+                    counter += 1
+                    link = false
                 }} else {
-                    resultAndEnteringLbl.text = makingtheMath(first: first!, andSecond: resultAndEnteringLbl.text!, forThisOperator: userInput)
-           
+            resultAndEnteringLbl.text = multiply(first: first!, andSecond: resultAndEnteringLbl.text!)
+            operationclicked = false
+            counter += 1
+            link = false
             }
         case "":
             break
