@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoolCalc3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jvU-iL-yuV">
-                                <rect key="frame" x="20" y="231" width="1040" height="559"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="312"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M1n-OA-Nzl">
-                                        <rect key="frame" x="0.0" y="0.0" width="1040" height="105"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-bT-Cre" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="168.5" height="105"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="0aX-mv-fkS"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="DcZ-xc-csP"/>
@@ -73,7 +73,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NR4-FP-BwL" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="168.5" y="0.0" width="166.5" height="105"/>
+                                                <rect key="frame" x="75" y="0.0" width="75" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="HWO-mh-FRR"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="Inm-vJ-ND5"/>
@@ -104,7 +104,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzs-I3-n6g" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="335" y="0.0" width="144.5" height="105"/>
+                                                <rect key="frame" x="150" y="0.0" width="75" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="2YK-Sf-aUt"/>
                                                     <constraint firstAttribute="width" constant="144.38" id="9ev-Iu-UVN"/>
@@ -132,7 +132,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-nX-Rdr" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="479.5" y="0.0" width="144.5" height="105"/>
+                                                <rect key="frame" x="225" y="0.0" width="75" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="1Vr-gD-bLA"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="144.38" id="svw-yR-WQ8"/>
@@ -160,7 +160,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-5v-KgH" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="624" y="0.0" width="416" height="105"/>
+                                                <rect key="frame" x="300" y="0.0" width="75" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93.329999999999998" id="CpG-xK-pJj">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="96.330001831054688"/>
@@ -207,10 +207,10 @@
                                         <variation key="heightClass=regular-widthClass=regular" axis="horizontal" distribution="fillProportionally"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-hp-5Tx">
-                                        <rect key="frame" x="0.0" y="108" width="1040" height="105"/>
+                                        <rect key="frame" x="0.0" y="63" width="375" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyF-PU-3Bs" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Pdt-VR-gDt"/>
                                                     <constraint firstAttribute="width" secondItem="cyF-PU-3Bs" secondAttribute="height" multiplier="1:1" id="Wl4-kd-SMH"/>
@@ -256,7 +256,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox8-a5-tbu" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="260" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="93.666666666666657" y="0.0" width="110.66666666666666" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="8"/>
                                                 <connections>
@@ -264,7 +264,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az4-mj-Xud" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="520" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="204.33333333333337" y="0.0" width="93.666666666666657" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="93.670000000000002" id="s9C-9b-SVa">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="93.670000000000002"/>
@@ -287,7 +287,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPw-dW-4R5" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="780" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="298" y="0.0" width="77" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="X"/>
                                                 <connections>
@@ -298,10 +298,10 @@
                                         <variation key="heightClass=regular-widthClass=compact" distribution="fillProportionally"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Q5-vD-bDx">
-                                        <rect key="frame" x="0.0" y="216" width="1040" height="105"/>
+                                        <rect key="frame" x="0.0" y="126" width="375" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPL-do-fGN" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="2cw-TZ-qGN"/>
                                                     <constraint firstAttribute="height" constant="134" id="W2s-PH-b8i">
@@ -345,7 +345,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXe-vr-4Vb" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="260" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="93.666666666666657" y="0.0" width="110.66666666666666" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="5"/>
                                                 <connections>
@@ -353,7 +353,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjF-b6-m1X" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="520" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="204.33333333333337" y="0.0" width="93.666666666666657" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="93.670000000000002" id="5TE-0D-Uod">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="93.670000000000002"/>
@@ -376,7 +376,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef9-pW-eSV" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="780" y="0.0" width="260" height="105"/>
+                                                <rect key="frame" x="298" y="0.0" width="77" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="77" id="VCg-4S-ASq"/>
                                                 </constraints>
@@ -400,10 +400,10 @@
                                         <variation key="heightClass=regular-widthClass=compact" distribution="fillProportionally"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7gN-f0-Tdd">
-                                        <rect key="frame" x="0.0" y="324" width="1040" height="105"/>
+                                        <rect key="frame" x="0.0" y="189" width="375" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4F-xQ-ziy" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="261" height="105"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96.666666666666671" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="0pi-GI-Owe"/>
                                                     <constraint firstAttribute="height" constant="134" id="BdR-vP-qeF">
@@ -447,7 +447,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40k-Nl-pON" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="260" y="0.0" width="260.5" height="105"/>
+                                                <rect key="frame" x="95.666666666666657" y="0.0" width="110.66666666666666" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="110.67" id="J8j-HG-ykF">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="110.67"/>
@@ -470,7 +470,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HQ-u8-3NA" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="519.5" y="0.0" width="261" height="105"/>
+                                                <rect key="frame" x="205.33333333333337" y="0.0" width="93.666666666666657" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="93.670000000000002" id="Sla-CD-iy1">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="93.670000000000002"/>
@@ -493,7 +493,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6K-qd-rYU" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="779.5" y="0.0" width="260.5" height="105"/>
+                                                <rect key="frame" x="298" y="0.0" width="77" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="77" id="T0x-Um-LH7"/>
                                                 </constraints>
@@ -517,10 +517,10 @@
                                         <variation key="heightClass=regular-widthClass=compact" distribution="fillProportionally"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="xq6-ak-bne">
-                                        <rect key="frame" x="0.0" y="432" width="1040" height="127"/>
+                                        <rect key="frame" x="0.0" y="252" width="375" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIA-al-fi5" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="339" height="127"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="202.33333333333334" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="386.5" id="F5F-q8-KPX">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="386.5"/>
@@ -571,7 +571,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tct-uO-E8f" customClass="styleNumbersBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="340" y="0.0" width="506" height="127"/>
+                                                <rect key="frame" x="203.33333333333334" y="0.0" width="93.666666666666657" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="172.66999816894531" id="5pA-zB-IJV"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="193.5" id="LmZ-wc-xyV">
@@ -613,7 +613,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yH-Dh-GUn" customClass="styleOtherBtn" customModule="CoolCalc3" customModuleProvider="target">
-                                                <rect key="frame" x="847" y="0.0" width="193" height="127"/>
+                                                <rect key="frame" x="298" y="0.0" width="77" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="206" id="Z17-1Z-rKP">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="193"/>
@@ -672,7 +672,7 @@
                                 </variation>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4X-P3-evj" customClass="styleLblResultAndInput" customModule="CoolCalc3" customModuleProvider="target">
-                                <rect key="frame" x="20" y="70" width="1040" height="161"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="126" id="YoR-Tf-uHr"/>
                                 </constraints>
@@ -823,7 +823,7 @@
             <size key="intrinsicContentSize" width="30" height="48"/>
         </designable>
         <designable name="C4X-P3-evj">
-            <size key="intrinsicContentSize" width="40" height="78"/>
+            <size key="intrinsicContentSize" width="39.666666666666664" height="77.666666666666671"/>
         </designable>
         <designable name="Ef9-pW-eSV">
             <size key="intrinsicContentSize" width="30" height="48"/>
